@@ -2,7 +2,7 @@ import React from 'react'
 
 const SongDetails = () => {
   return (
-    <div>El detalle de la canción que seleccionaste</div>
+    <h1>El detalle de la canción que seleccionaste</h1>
   )
 }
 
