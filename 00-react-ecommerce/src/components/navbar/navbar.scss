@@ -1,0 +1,50 @@
+// Define color variables with cat theme
+$menu-color: #ff5e6d;  // Cat's nose pink
+$hover-color: #ffd700; // Cat's eye gold
+$border-color: #000000; // Cat's fur black
+
+// Define mixins
+@mixin header-link {
+  color: $menu-color;
+  text-decoration: none;
+  letter-spacing: 2px;
+  &:hover {
+    color: $hover-color;
+    border-bottom: solid 2px $border-color;
+  }
+}
+
+@mixin header-border($size: 3px) {
+  border-bottom: solid $size $border-color;
+}
+
+// Apply styles to header section with cat theme
+.header {
+  background-color: #f3f3f3; // Cat's fur light gray
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+
+  &__logo {
+    @include header-link;
+    font-family: "Catamaran", sans-serif; // Cat-themed font
+  }
+
+  &__nav-list {
+    display: flex;
+    list-style: none;
+    column-gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__item-link {
+    @include header-link;
+
+    &--is-active {
+    //   border-bottom: solid 2px $border-color;
+      font-weight: bold;
+      @include header-border;
+    }
+  }
+}
